@@ -42,3 +42,13 @@ variable "user_roles" {
   type        = list(string)
   default     = ["admin", "editor", "viewer"]
 }
+
+variable "feature_toggle" {
+  description = "Feature toggling application features."
+  type    	= map(string)
+  default 	= {
+	"signup_enabled"           	= "true"
+	"profile_editing_enabled"  	= "false"
+	"search_functionality_enabled" = "true"
+  }
+}
