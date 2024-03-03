@@ -37,6 +37,8 @@ resource "local_file" "user_roles" {
   content  = "Role: ${var.user_roles[count.index + 0]}"
   }
 
+
+#challenge2
 resource "local_file" "feature_toggle" {
   for_each = var.feature_toggle
   filename = "${path.module}/feature-${each.key}-status.txt"
