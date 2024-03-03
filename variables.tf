@@ -37,6 +37,8 @@ variable "node_specifications" {
   default 	= ["node01", 4, true]
 }
 
+
+#challenge2
 variable "user_roles" {
   description = " configuration for user roles"
   type        = list(string)
