@@ -36,3 +36,9 @@ resource "local_file" "user_roles" {
   filename = "user-role-${var.user_roles[count.index + 0]}.txt"
   content  = "Role: ${var.user_roles[count.index + 0]}"
   }
+
+resource "local_file" "feature_toggle" {
+  for_each = var.feature_toggle
+  filename = "${path.module}/feature-${each.key}-status.txt"
+  content  = "Feature ${each.key} is enabled: ${each.value}"
+}
