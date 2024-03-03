@@ -13,3 +13,11 @@ resource "local_file" "app_config_files" {
   filename = "${path.module}/${each.key}-config.txt"
   content  = "${each.key}: ${each.value}"
 }
+
+resource "local_file" "server_details_file" {
+  filename = "${path.module}/server_details.txt"
+  content  = <<-EOT
+  name: ${var.server_details.name}
+  ip  : ${var.server_details.ip}
+  EOT
+}
