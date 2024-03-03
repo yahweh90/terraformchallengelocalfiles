@@ -31,6 +31,8 @@ resource "local_file" "node_specs_file" {
   EOT
 }
 
+
+#challenge2
 resource "local_file" "user_roles" {
   count    = length(var.user_roles)
   filename = "user-role-${var.user_roles[count.index + 0]}.txt"
