@@ -36,3 +36,9 @@ variable "node_specifications" {
   type    	= tuple([string, number, bool])
   default 	= ["node01", 4, true]
 }
+
+variable "user_roles" {
+  description = " configuration for user roles"
+  type        = list(string)
+  default     = ["admin", "editor", "viewer"]
+}
