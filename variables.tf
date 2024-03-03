@@ -43,6 +43,8 @@ variable "user_roles" {
   default     = ["admin", "editor", "viewer"]
 }
 
+
+#challenge2
 variable "feature_toggle" {
   description = "Feature toggling application features."
   type    	= map(string)
