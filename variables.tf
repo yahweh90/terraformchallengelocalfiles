@@ -30,3 +30,9 @@ variable "server_details" {
 	ip    	        = "192.168.1.10"
   }
  }
+
+variable "node_specifications" {
+  description = "Configuration for a cluster node."
+  type    	= tuple([string, number, bool])
+  default 	= ["node01", 4, true]
+}
