@@ -9,3 +9,12 @@ variable "deployment_regions" {
   type        = set(string)
   default     = ["us-east-1", "eu-west-1", "ap-south-1"]
 }
+
+variable "app_settings" {
+  description = "Configuration settings for the application."
+  type        = map(string)
+  default     = {
+	"environment" = "production"
+	"debug_mode"  = "false"
+  }
+}
