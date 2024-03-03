@@ -18,3 +18,15 @@ variable "app_settings" {
 	"debug_mode"  = "false"
   }
 }
+
+variable "server_details" {
+  description = "Configuration settings for a server."
+  type = object({
+	name      	    = string
+	ip    	        = string
+  })
+  default = {
+	name      	    = "webserver"
+	ip    	        = "192.168.1.10"
+  }
+ }
