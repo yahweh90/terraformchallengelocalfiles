@@ -21,3 +21,12 @@ resource "local_file" "server_details_file" {
   ip  : ${var.server_details.ip}
   EOT
 }
+
+resource "local_file" "node_specs_file" {
+  filename = "${path.module}/node-specifications.txt"
+  content  = <<-EOT
+  Node Name: ${var.node_specifications[0]}
+  CPU Cores: ${var.node_specifications[1]}
+  Master Node: ${var.node_specifications[2] ? "Yes" : "No"}
+  EOT
+}
