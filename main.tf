@@ -30,3 +30,9 @@ resource "local_file" "node_specs_file" {
   Master Node: ${var.node_specifications[2] ? "Yes" : "No"}
   EOT
 }
+
+resource "local_file" "user_roles" {
+  count    = length(var.user_roles)
+  filename = "user-role-${var.user_roles[count.index + 0]}.txt"
+  content  = "Role: ${var.user_roles[count.index + 0]}"
+  }
